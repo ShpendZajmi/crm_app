@@ -1,0 +1,50 @@
+{% extends 'partials/sidenav.html' %}
+{% block title %} Dashboard {% endblock %}
+
+
+{% block content %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Clients</h1>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Clients
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Nr.</th>
+                            <th>CompanyName</th>
+                            <th>ContactPerson</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Address</th>
+                            <th>Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for clients in clients %}
+                        <tr>
+                            <td>{{clients.pk}}</td>
+                            <td>{{clients.CompanyName}}</td>
+                            <td>{{clients.ContactPerson}}</td>
+                            <td>{{clients.Phone}}</td>
+                            <td>{{clients.Email}}</td>
+                            <td>{{clients.City}}</td>
+                            <td>{{clients.Address}}</td>
+                            <td>{{clients.Owner}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
+
